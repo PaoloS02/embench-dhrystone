@@ -1,15 +1,13 @@
 set confirm off
-file {0}
 target extended-remote :4242
 load
 delete breakpoints
-break start_trigger
-break stop_trigger
+break start_counter
+break stop_counter
 break _exit
 continue
 print /u *0xe0001004
 continue
 print /u *0xe0001004
 continue
-print /x $a0
 quit
