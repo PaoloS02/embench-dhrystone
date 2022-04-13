@@ -1,0 +1,13 @@
+set confirm off
+target extended-remote :4242
+load
+delete breakpoints
+break start_counter
+break stop_counter
+break _exit
+continue
+print /u *0xe0001004
+continue
+print /u *0xe0001004
+continue
+quit
